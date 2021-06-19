@@ -1,0 +1,21 @@
+<h1>BOT応答完了サイト</hq>
+
+<form method=POST action="{% url 'form'  %}">
+    {% csrf_token %} 
+    {{form.as_p}}
+    <input type='submit' value='修正'>
+</form>
+
+<table border="1">
+    <tr>
+        <th>薬品名</th>
+        <th>説明</th>
+    </tr>
+    
+    {% for medicines in medicinelist %}
+    <tr>
+        <td><a href="{% url 'update' medicines.pk %}">{{medicines.medicine}}<a></td>
+        <td>{{medicines.detail}}</td>
+    </tr>
+    {% endfor %}
+</table>

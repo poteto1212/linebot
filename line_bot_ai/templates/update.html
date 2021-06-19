@@ -1,0 +1,14 @@
+<h1>修正画面</h1>
+
+<form action='' method='POST'>{% csrf_token %}
+    {{form.as_p}}
+    <input type='submit' value='修正'>
+</form>
+<ul>
+    <li>
+        <a href="{% url 'form'  %}">一覧へ</a>
+    </li>
+    <li>
+        <a href="{% url 'delete' object.pk %}">削除</a>
+    </li>
+</ul>

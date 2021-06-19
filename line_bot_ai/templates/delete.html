@@ -1,0 +1,6 @@
+<form method='POST'>{% csrf_token %}
+        <p>本当に「{{object.title}}」を削除しますか？</p>
+        <input type='submit' value='削除する'>
+</form>
+
+<a href="{% url 'form' %}">一覧に戻る(削除しない)</a>
